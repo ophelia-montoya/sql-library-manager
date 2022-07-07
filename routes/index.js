@@ -34,6 +34,7 @@ router.post("/books/new", asyncHandler(async (req, res) => {
     } catch (error) {
 
       // If required fields fail validation, re-render form from properties/values... 
+      // reference: https://teamtreehouse.com/library/validation-and-handling-errors-2
       if (error.name === "SequelizeValidationError") {
         book = await Book.build(req.body); // ...from non-persistent model created by req.body...
         res.render("new-book", {

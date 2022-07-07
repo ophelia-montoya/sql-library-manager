@@ -39,7 +39,7 @@ app.use((req, res, next) => {
   next(createError(404, "Sorry, that page was not found. Please check the URL."));
 });
 
-// Error handler
+// Error handler reference: https://teamtreehouse.com/library/one-solution-28
 app.use((err, req, res, next) => {
   err.status = err.status || 500;
   res.status(err.status);
